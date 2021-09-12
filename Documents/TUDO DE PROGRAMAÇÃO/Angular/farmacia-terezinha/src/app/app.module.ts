@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 
 import { MaterializeModule } from 'angular2-materialize';
 import { LoginModule } from './login/login.modules';
+import { NewAccountComponent } from './new-account/new-account.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NewAccountComponent,
   ],
   imports: [
     BrowserModule,
