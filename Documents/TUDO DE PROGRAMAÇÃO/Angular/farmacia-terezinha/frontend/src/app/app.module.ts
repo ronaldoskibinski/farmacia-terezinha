@@ -11,7 +11,7 @@ import { NewAccountComponent } from './new-account/new-account.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NewAccountComponent,
+    NewAccountComponent,    
   ],
   imports: [
     BrowserModule,
