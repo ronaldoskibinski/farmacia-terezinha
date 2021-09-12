@@ -5,6 +5,7 @@ import { NewAccountComponent } from './new-account/new-account.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'new-account', component: NewAccountComponent }
 ];
 
