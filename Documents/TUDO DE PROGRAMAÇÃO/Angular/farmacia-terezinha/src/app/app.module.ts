@@ -5,17 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { MaterializeModule } from 'angular2-materialize';
-import { LoginComponent } from './login/login.component';
+import { LoginModule } from './login/login.modules';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterializeModule
+    MaterializeModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
