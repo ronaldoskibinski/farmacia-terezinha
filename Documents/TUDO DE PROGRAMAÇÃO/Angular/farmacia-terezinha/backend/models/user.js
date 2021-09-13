@@ -19,7 +19,7 @@ module.exports = class User {
 
     static save(user) {
         return db.execute(
-            'INSERT INTO user (name, phone, email, adress, password) VALUES (?, ?, ?, ?, ?)', 
+            'INSERT INTO user (name, phone, email, address, password) VALUES (?, ?, ?, ?, ?)', 
             [user.name, user.phone, user.email, user.address, user.password]
         );
     }
