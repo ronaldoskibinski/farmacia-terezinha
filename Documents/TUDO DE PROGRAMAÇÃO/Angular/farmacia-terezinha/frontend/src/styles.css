@@ -1,14 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-mat-form-field {
-  width: 100%;
-}
-
-button {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
 :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 14px;
@@ -116,6 +107,7 @@ button {
 
   .card-container .card:not(:last-child) {
     margin-right: 0;
+    text-align: center;
   }
 
   .card.card-small {
@@ -131,6 +123,15 @@ button {
     height: 16px;
     width: 168px;
     background-color: #1976d2;
+    color: #e6ebf1;
+    font-size: large;
+    font-weight: bold;
+  }
+
+  .card.card-small-blue:disabled {
+    height: 16px;
+    width: 168px;
+    background-color: #76797c;
     color: #e6ebf1;
     font-size: large;
     font-weight: bold;

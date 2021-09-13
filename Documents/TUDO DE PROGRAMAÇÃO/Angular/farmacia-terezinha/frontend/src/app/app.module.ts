@@ -11,13 +11,6 @@ import { LoginModule } from './login/login.modules';
 import { NewAccountComponent } from './new-account/new-account.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatListModule } from '@angular/material/list';
-import { MatToolbarModule } from '@angular/material/toolbar';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,12 +23,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     LoginModule,
     ReactiveFormsModule,
     NoopAnimationsModule,
-    MatButtonModule,
-    MatCardModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatToolbarModule,
     HttpClientModule
   ],
   providers: [],
