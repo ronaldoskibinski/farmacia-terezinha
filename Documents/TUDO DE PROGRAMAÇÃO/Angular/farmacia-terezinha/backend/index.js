@@ -8,7 +8,16 @@ const errorController = require('./controllers/error');
 
 const app = express();
 
-const ports = process.env.PORT || 4200;
+const ports = process.env.PORT || 3000;
+
+const cors = require('cors'); 
+
+const corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200
+}
+
+app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 

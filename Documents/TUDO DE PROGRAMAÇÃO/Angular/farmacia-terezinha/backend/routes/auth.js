@@ -8,6 +8,8 @@ const User = require('../models/user');
 
 const authController = require('../controllers/auth');
 
+// POST METHOD AND VALIDATIONS
+
 router.post(
     '/signup',
     [

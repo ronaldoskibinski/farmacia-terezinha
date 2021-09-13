@@ -4,6 +4,8 @@ const bcrypt = require('bcryptjs');
 
 const User = require('../models/user');
 
+// CONTROLLER FOR ERRORS AND VALIDATIONS
+
 exports.signup = async (req, res, next) => {
     const errors = validationResult(req);
 

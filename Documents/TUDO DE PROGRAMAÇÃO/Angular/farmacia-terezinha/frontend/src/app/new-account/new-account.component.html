@@ -19,55 +19,79 @@
   </div>
 
   <!-- Body -->
-<div class="content" role="main">
+<form [formGroup]="signupForm" (ngSubmit)="signup()" novalidate class="content" role="main">
+  <!-- Login -->
+  <h4>Por Favor</h4>
+  <p>Insira seus dados para criar a sua conta: </p>
 
-    <!-- Login -->
-    <h4>Por Favor</h4>
-    <p>Insira seus dados para criar a sua conta: </p>
-
-    <div>
-        <div class="row">
-            <div class="input-field col s12">
-              <input value="" id="user" type="text" class="validate">
-              <label class="active" for="user">Nome</label>
-            </div>
+  <div style="width: 80%;">
+    <div class="row">
+        <div class="input-field col s12">
+          <mat-form-field>
+            <mat-label>
+              <input matInput placeholder="Ex. Gertrudes" id="name" formControlName="name" type="text" class="validate">
+            </mat-label>
+          </mat-form-field>
+          <label class="active" for="user">Nome</label>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="input-field col s12">
-              <input value="" id="user" type="text" class="validate">
-              <label class="active" for="user">Telefone</label>
-            </div>
+    <div class="row">
+        <div class="input-field col s12">
+          <mat-form-field>
+            <mat-label>
+              <input matInput placeholder="Ex. (42) 99999-9999" id="phone" formControlName="phone" type="tel" class="validate">
+            </mat-label>
+          </mat-form-field>
+          <label class="active" for="user">Telefone</label>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="input-field col s12">
-              <input value="" id="user" type="text" class="validate">
-              <label class="active" for="user">Endereço</label>
-            </div>
+    <div class="row">
+        <div class="input-field col s12">
+          <mat-form-field>
+            <mat-label>
+              <input matInput placeholder="Ex. Rua Floresta 12" id="address" formControlName="address" type="text" class="validate">
+            </mat-label>
+          </mat-form-field>
+          <label class="active" for="user">Endereço</label>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="input-field col s12">
-              <input value="" id="user" type="text" class="validate">
-              <label class="active" for="user">Email</label>
-            </div>
+    <div class="row">
+        <div class="input-field col s12">
+          <mat-form-field>
+            <mat-label>
+              <input matInput placeholder="Ex. gertrudes@gmail.com" id="email" formControlName="email" type="email" class="validate">
+            </mat-label>
+          </mat-form-field>
+          <label class="active" for="user">Email</label>
         </div>
-        
-        <div class="row">
-            <div class="input-field col s12">
-                <input value="" id="password" type="password" class="validate">
-                <label class="active" for="password">Senha</label>
-            </div>
-        </div>    
-  
-        <div class="card-container">
-        <button class="card card-small-blue" tabindex="0">
-            <span>Criar</span>
-        </button>
+    </div>
     
-        <a routerLink="/login"> 
-            <button class="card card-small" tabindex="0">
+    <div class="row">
+        <div class="input-field col s12">
+            <mat-form-field>
+              <mat-label>
+                <input matInput id="password" formControlName="password" type="password" class="validate">
+              </mat-label>
+            </mat-form-field>
+            <label class="active" for="password">Senha</label>
+        </div>
+    </div>  
+    
+    <table>
+      <tr>
+        <td>
+          <button [disabled]="!signupForm.valid" mat-raised-button type="submit">
+            <span>Criar</span>
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a routerLink="/login"> 
+            <button mat-raised-button>
                 <svg version="1.1" id="back-btn" xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 384.97 384.97" style="enable-background:new 0 0 384.97 384.97;" xml:space="preserve">
                 <g id="Chevron_Left_Circle">
@@ -81,7 +105,12 @@
                 </svg>
                 <span>Voltar</span>      
             </button>
-        </a>
-        </div>
-    </div>
-</div>
+          </a>
+        </td>
+      </tr>
+    </table>  
+    
+  </div>   
+
+    
+</form>
