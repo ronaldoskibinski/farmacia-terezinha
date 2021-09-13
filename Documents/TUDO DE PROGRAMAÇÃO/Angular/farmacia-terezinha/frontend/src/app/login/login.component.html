@@ -31,27 +31,28 @@
     </div>
   
     <!-- Login -->
-    <h4>Por Favor</h4>
+    <h2>Por Favor</h2>
     <p>Identifique-se ou crie sua conta:</p>
 
     <div>
+      <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate >
         <div class="row">
             <div class="input-field col s12">
-              <input value="" id="user" type="text" class="validate">
+              <input  placeholder="Seu email" id="email" formControlName="email" type="text" class="validate">
               <label class="active" for="user">Usuario</label>
             </div>
         </div>
         
         <div class="row">
             <div class="input-field col s12">
-                <input value="" id="password" type="password" class="validate">
+                <input value="" id="password" formControlName="password" type="password" class="validate">
                 <label class="active" for="password">Senha</label>
             </div>
         </div>    
   
         <div class="card-container">
 
-          <button class="card card-small-blue" tabindex="0">
+          <button [disabled]="!loginForm.valid" type="submit" class="card card-small-blue" tabindex="0">
               <span>Logar</span>
           </button>
           
@@ -67,10 +68,11 @@
             <span>Criar Conta</span>  
           </a> 
         </div>
+      </form>
     </div>
   
     <!-- Difficults? -->
-    <h4>Está com Dificuldades?</h4>
+    <h2>Está com Dificuldades?</h2>
     <p>Entre em contato com o suporte:</p>
   
     <input type="hidden" #selection>

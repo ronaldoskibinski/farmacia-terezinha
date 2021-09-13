@@ -10,11 +10,13 @@ import { MaterializeModule } from 'angular2-materialize';
 import { LoginModule } from './login/login.modules';
 import { NewAccountComponent } from './new-account/new-account.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewAccountComponent,    
+    NewAccountComponent,
+    HomeComponent,    
   ],
   imports: [
     BrowserModule,

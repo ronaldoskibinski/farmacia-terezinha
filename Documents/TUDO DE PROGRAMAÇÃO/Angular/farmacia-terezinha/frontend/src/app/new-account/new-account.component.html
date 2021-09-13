@@ -21,7 +21,7 @@
   <!-- Body -->
 <form [formGroup]="signupForm" (ngSubmit)="signup()" novalidate class="content" role="main">
   <!-- Login -->
-  <h4>Por Favor</h4>
+  <h2>Por Favor</h2>
   <p>Insira seus dados para criar a sua conta: </p>
 
   <div class="container">
@@ -64,7 +64,7 @@
   
   <div class="card-container">
 
-    <button class="card card-small-blue"  [disabled]="!signupForm.valid" type="submit"  tabindex="0">
+    <button class="card card-small-blue"  [disabled]="!signupForm.valid" type="submit" tabindex="0">
       <span>Criar</span>
     </button>
 
