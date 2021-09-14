@@ -10,14 +10,16 @@ import { Medicines } from '../models/Medicines';
 export class HomeComponent implements OnInit {
 
   service!: AuthService;
-  medicines!: Medicines[];
+  medicines: Medicines[] = [];
+  arr: any[] = [];
 
   constructor(private authService: AuthService) {
       this.service = authService;
   }
 
   ngOnInit(): void {
-    this.authService.listMedicines().subscribe(dados => this.medicines = dados);
+    this.authService.listMedicines().subscribe(medicines => {this.medicines = medicines} );       
   }
+  
 
 }

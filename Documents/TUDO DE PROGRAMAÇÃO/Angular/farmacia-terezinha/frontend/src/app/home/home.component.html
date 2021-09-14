@@ -9,8 +9,18 @@
       <div class="spacer"></div>
       <a aria-label="Painel de Usuario" rel="noopener" href="https://facebook.com/eagledigital" title="Usuario">
         <img width="28" src="assets/imgs/user.png">
-      </a>
+      </a>    
 </div>
+
+<div class="content" ng-controller="MyCtrl">
+    <table>
+        <tr *ngFor="let medicine of medicines">
+            <td>
+                {{medicine.name}}
+            </td>
+        </tr>
+    </table>
+   </div>
 
 <!--
 <mat-card class="example-card">
