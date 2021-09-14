@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service'
+import { Medicines } from '../models/Medicines';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  service!: AuthService;
+  medicines!: Medicines[];
+
+  constructor(private authService: AuthService) {
+      this.service = authService;
+  }
 
   ngOnInit(): void {
+    this.authService.listMedicines().subscribe(dados => this.medicines = dados);
   }
 
 }

@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const User = require('../models/user');
+const Medicines = require('../models/medicines');
 const { response } = require('express');
 
 // CONTROLLER FOR ERRORS AND VALIDATIONS
@@ -88,3 +89,22 @@ exports.login = async (req, res, next) => {
         next(err);
     }    
 }
+
+// ASYNC FOR GET MEDICINES
+exports.getm = async (req, res, next) => {
+
+    try {
+
+        const [medicines, _] = await Medicines.getm();
+
+        res.status(200).json({medicines});
+
+    } catch (error) {
+
+        console.log(error);
+        next(error);
+        
+    }
+
+}
+

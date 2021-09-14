@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-account',
@@ -11,7 +12,7 @@ export class NewAccountComponent implements OnInit {
 
   signupForm!: FormGroup;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.signupForm = this.createFormGroup();
@@ -28,7 +29,12 @@ export class NewAccountComponent implements OnInit {
   }
 
   signup(): void {
-    this.authService.signup(this.signupForm.value).subscribe((msg) => console.log(msg));
+    if(this.authService.signup(this.signupForm.value).subscribe((msg) => console.log(msg))) {
+
+      document.getElementById('congratsMessage')!.style.display = "block";
+      document.getElementById('backMsg')!.style.display = "block";
+      
+    }       
   }
 
 }

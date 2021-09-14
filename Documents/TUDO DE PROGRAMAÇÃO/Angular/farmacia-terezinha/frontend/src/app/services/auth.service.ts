@@ -6,6 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { first, catchError, tap} from 'rxjs/operators';
 
 import { User } from '../models/User';
+import { Medicines } from '../models/Medicines';
 import { ErrorHandlerService } from './error-handler.service';
 
 @Injectable({
@@ -30,10 +31,12 @@ export class AuthService {
 
   // SIGNUP SERVICE
   signup(user: Omit<User, "id">): Observable<User> {
+    
     return this.http.post<User>(`${this.url}/signup`, user, this.httpOptions).pipe(
       first(),
-      catchError(this.errorHandlerService.handleError<User>("signup")) 
+      catchError(this.errorHandlerService.handleError<User>("signup"))    
     );
+
   }
 
   // LOGIN SERVICE
@@ -51,15 +54,26 @@ export class AuthService {
         tap((tokenObject: { token: string; userId: Pick<User, "id"> }) => {
           this.userId = tokenObject.userId;
           localStorage.setItem("token", tokenObject.token);
-          this.isUserLoggedIn$.next(true);
-          this.router.navigate(["home"]);
-        }),
-        catchError(
-          this.errorHandlerService.handleError<{
+          this.isUserLoggedIn$.next(true);                 
+          this.router.navigate(["home"]);    
+        } ),
+        catchError(                  
+          this.errorHandlerService.handleError<{            
             token: string; userId: 
-            Pick<User, "id">;
-        }>("login"))
-      );
+            Pick<User, "id">;            
+        }>("login")
+        )
+      );      
+  } 
+  
+  // GET MEDICINES SERVICE
+  listMedicines() {
+    return this.http
+    .get<Medicines[]>(`${this.url}/getm`)
+    .pipe(
+      tap(console.log)
+    );
   }
+  
 
 }

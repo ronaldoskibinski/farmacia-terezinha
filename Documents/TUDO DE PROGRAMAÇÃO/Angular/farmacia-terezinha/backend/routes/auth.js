@@ -10,6 +10,7 @@ const authController = require('../controllers/auth');
 
 // POST METHOD AND VALIDATIONS
 
+// SIGNUP ROUTE
 router.post(
     '/signup',
     [
@@ -28,8 +29,14 @@ router.post(
     ], authController.signup
 );
 
+// LOGIN ROUTE
 router.post(
     '/login', authController.login
+)
+
+// GET MEDICINES ROUTE
+router.get(
+    '/getm', authController.getm
 )
 
 module.exports = router;

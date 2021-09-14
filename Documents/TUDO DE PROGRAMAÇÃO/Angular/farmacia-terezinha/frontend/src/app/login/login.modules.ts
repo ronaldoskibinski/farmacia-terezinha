@@ -2,6 +2,7 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from '../app-routing.module';
+import { MatCardModule } from '@angular/material/card';
 
 import { LoginComponent } from "./login.component";
 
@@ -9,7 +10,8 @@ import { LoginComponent } from "./login.component";
     imports: [
         CommonModule,
         AppRoutingModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatCardModule
     ],
     exports: [],
     declarations: [LoginComponent],
